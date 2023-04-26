@@ -13,6 +13,9 @@ const muiCardActionArea: {
       background: "transparent",
     },
   },
+  defaultProps: {
+    disableTouchRipple: true,
+  },
 };
 
 export default muiCardActionArea;
