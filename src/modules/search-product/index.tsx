@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from "react";
 
 import { ImageProperties } from "commons/models/ImageProperties";
 
-import { postImage } from "services/search-product";
+import { postImage, postImageToVisualSearch } from "services/search-product";
 
 import { InnerSearchProduct } from "./InnerSearchProduct";
 
@@ -33,8 +33,8 @@ export const SearchProduct = () => {
     let data = new FormData();
     data.append("image", image);
 
-    const response = await postImage(data);
-    console.log(response)
+    const response = await postImageToVisualSearch(data);
+    console.log(response);
   };
 
   return (
