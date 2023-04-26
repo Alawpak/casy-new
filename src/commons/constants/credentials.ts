@@ -1,0 +1,1 @@
+export const VISUAL_SEARCH_BING_SUBSCRIPTION_KEY = "";
