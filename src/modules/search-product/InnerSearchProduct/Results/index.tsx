@@ -1,7 +1,12 @@
 import { Grid } from "@mui/material";
 import React from "react";
 
-export const Results = () => {
+type Props = {
+  dataResponse: any | null;
+};
+
+export const Results = ({ dataResponse }: Props) => {
+  console.log(dataResponse);
   return (
     <Grid item container>
       <Grid item>Titulo</Grid>
