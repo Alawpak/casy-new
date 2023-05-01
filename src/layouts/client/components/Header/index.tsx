@@ -10,6 +10,9 @@ export const Header = () => {
   const ColorButton = () => navigate("color");
   const SearchButton = () => navigate("search-product");
   const HomeButton = () => navigate("home");
+  const ContactButton = () => navigate("contact");
+  const MenuButton = () => navigate("menu");
+  const OrderButton = () => navigate("order");
 
   return (
     <HideOnScroll>
@@ -22,6 +25,16 @@ export const Header = () => {
             </Button>
           </Grid>
           <Grid item>
+            <Button variant="outlined" onClick={ContactButton} color="error">
+              Contact
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button variant="outlined" onClick={MenuButton} color="error">
+              Product
+            </Button>
+          </Grid>
+          <Grid item>
             <Button variant="outlined" onClick={SearchButton} color="error">
               Search
             </Button>
@@ -29,6 +42,11 @@ export const Header = () => {
           <Grid item>
             <Button variant="outlined" onClick={ColorButton} color="error">
               Color
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button variant="outlined" onClick={OrderButton} color="error">
+              Order
             </Button>
           </Grid>
         </Grid>
