@@ -1,5 +1,3 @@
-import { InputData } from "commons/models/InputData";
-
 export const extraerSepararPalabras = (input: any): string => {
   const names: string[] = [];
 
