@@ -1,11 +1,10 @@
 import { ChangeEvent, useRef } from "react";
 
-import { Box, CardActionArea, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
 
-import { ImageProperties } from "commons/models/ImageProperties";
-
 import { dragOverHandler, onInputClick } from "./helpers";
+import DragAndDropArea from "components/DragAndDropCard";
 
 type Props = {
   handleFileChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -46,10 +45,9 @@ export const UploadImage = ({ handleFileChange, handleImage }: Props) => {
         container
         justifyContent="center"
         position="relative"
-        border="1px solid black"
         height="100%"
       >
-        <CardActionArea
+        <DragAndDropArea
           onDrop={dropHandler}
           onDragOver={dragOverHandler}
           onClick={handleClick}
@@ -64,16 +62,23 @@ export const UploadImage = ({ handleFileChange, handleImage }: Props) => {
             onChange={handleFileChange}
             onClick={onInputClick}
           />
-          <Grid item container xs={12} justifyContent="center">
-            <CloudUploadOutlinedIcon />
+          <Grid container p={3}>
+            <Grid item container xs={12} justifyContent="center">
+              <CloudUploadOutlinedIcon />
+            </Grid>
+            <Grid
+              item
+              container
+              xs={12}
+              justifyContent="center"
+              textAlign={"center"}
+            >
+              <Typography>
+                {`Selecciona una imagen o arrastra y suelta aqu\u00ed`}
+              </Typography>
+            </Grid>
           </Grid>
-          <Grid item container xs={12} justifyContent="center">
-            <Typography>Drops your files here!</Typography>
-          </Grid>
-          <Grid item container xs={12} justifyContent="center">
-            <Typography>or click</Typography>
-          </Grid>
-        </CardActionArea>
+        </DragAndDropArea>
       </Grid>
     </>
   );
