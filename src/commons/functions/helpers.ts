@@ -51,5 +51,5 @@ export const eliminarPalabrasRepetidas = (input: string): string => {
     (a, b) => contador[b] - contador[a]
   );
   const palabrasRepetidas = palabrasOrdenadas.slice(0, 3);
-  return palabrasRepetidas.join(", ");
+  return palabrasRepetidas.join("+");
 };
