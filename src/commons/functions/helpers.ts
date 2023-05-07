@@ -1,13 +1,10 @@
-import { InputData } from "commons/models/InputData";
-
-export const extraerSepararPalabras = (inputString: string): string => {
-  const input: InputData = JSON.parse(inputString);
+export const extraerSepararPalabras = (input: any): string => {
   const names: string[] = [];
 
-  input.tags.forEach((tag) => {
-    tag.actions.forEach((action) => {
+  input.tags.forEach((tag: any) => {
+    tag.actions.forEach((action: any) => {
       if (action.data && action.data.value) {
-        action.data.value.forEach((value) => {
+        action.data.value.forEach((value: any) => {
           names.push(value.name);
         });
       }

@@ -10,7 +10,7 @@ const ColorsComponent = ({ colors }: Props) => {
     <Grid item container xs={4} spacing={2}>
       {colors.map((color) => {
         return (
-          <Grid item xs={12}>
+          <Grid item xs={12} key={color}>
             <Box
               sx={{
                 width: "100%",
@@ -34,8 +34,8 @@ export const Color = () => {
       justifyContent="center"
       spacing={2}
     >
-      {paletteColor.map((colors) => (
-        <ColorsComponent colors={colors} />
+      {paletteColor.map((colors, index) => (
+        <ColorsComponent colors={colors} key={index} />
       ))}
     </Grid>
   );

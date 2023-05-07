@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from "react";
 
 import { ImageProperties } from "commons/models/ImageProperties";
 
-import { postImage } from "services/search-product";
+import { postImageToVisualSearch } from "services/search-product";
 
 import { InnerSearchProduct } from "./InnerSearchProduct";
 
@@ -10,6 +10,8 @@ export const SearchProduct = () => {
   const [imageProperties, setImageProperties] = useState<
     ImageProperties | undefined
   >(undefined);
+
+  const [dataResponse, setDataResponse] = useState<any | null>(null);
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -33,8 +35,8 @@ export const SearchProduct = () => {
     let data = new FormData();
     data.append("image", image);
 
-    const response = await postImage(data);
-    console.log(response)
+    const dataResponse = await postImageToVisualSearch(data);
+    setDataResponse(dataResponse);
   };
 
   return (
@@ -44,6 +46,7 @@ export const SearchProduct = () => {
         handleFileChange={handleFileChange}
         handleImage={handleImage}
         searchImage={searchImage}
+        dataResponse={dataResponse}
       />
     </>
   );
