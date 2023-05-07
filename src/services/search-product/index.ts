@@ -20,7 +20,6 @@ export const postImageToVisualSearch = async (data: FormData) => {
       );
       const tagsFinal = eliminarPalabrasRepetidas(palabrasFiltrados);
       console.log(tagsFinal);
-      return response.data;
     }
     return null;
   } catch (error) {
