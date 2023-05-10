@@ -5,6 +5,8 @@ import { ImageProperties } from "commons/models/ImageProperties";
 import { postImageToVisualSearch } from "services/search-product";
 
 import { InnerSearchProduct } from "./InnerSearchProduct";
+import { getTags } from "./helpers";
+import { getImagesSearch } from "services/image-search";
 
 export const SearchProduct = () => {
   const [imageProperties, setImageProperties] = useState<
@@ -36,7 +38,10 @@ export const SearchProduct = () => {
     data.append("image", image);
 
     const dataResponse = await postImageToVisualSearch(data);
-    setDataResponse(dataResponse);
+    const tags = getTags(dataResponse);
+    console.log(tags);
+    const imageSearchResponse = await getImagesSearch(tags);
+    setDataResponse(imageSearchResponse);
   };
 
   return (

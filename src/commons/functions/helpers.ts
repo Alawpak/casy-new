@@ -19,14 +19,14 @@ export const extraerSepararPalabras = (input: any): string => {
 
 export const filtrarPalabras = (
   input: string,
-  palabras1: string[],
+  colors: string[],
   palabras2: string[] = []
 ): string => {
   const palabras = input.split(",");
 
   const palabrasFiltradas = palabras.filter((palabra) => {
     return (
-      palabras1.includes(palabra.trim()) || palabras2.includes(palabra.trim())
+      colors.includes(palabra.trim()) || palabras2.includes(palabra.trim())
     );
   });
   return palabrasFiltradas.join(", ");
@@ -50,6 +50,9 @@ export const eliminarPalabrasRepetidas = (input: string): string => {
   const palabrasOrdenadas = Object.keys(contador).sort(
     (a, b) => contador[b] - contador[a]
   );
-  const palabrasRepetidas = palabrasOrdenadas.slice(0, 3);
-  return palabrasRepetidas.join(", ");
+  let palabrasRepetidas = palabrasOrdenadas.slice(0, 2);
+  palabrasRepetidas = palabrasRepetidas.reverse();
+  const finalQueries = [...palabrasRepetidas, "Reworked", "Pinterest"];
+  console.log(finalQueries);
+  return finalQueries.join("+");
 };
