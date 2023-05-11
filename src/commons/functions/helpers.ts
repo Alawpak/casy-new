@@ -56,3 +56,12 @@ export const eliminarPalabrasRepetidas = (input: string): string => {
   console.log(finalQueries);
   return finalQueries.join("+");
 };
+
+export function arrayValidation(array: Array<any>) {
+  return array && Array.isArray(array) && array.length;
+}
+
+export const changeWhiteSpacesForSign = (url: string) => {
+  const x = url.replaceAll(" ", "-").toLowerCase();
+  return x;
+};
