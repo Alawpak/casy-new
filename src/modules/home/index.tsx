@@ -1,9 +1,11 @@
-import React from "react";
+import { Grid, Typography } from "@mui/material";
 
 export const Home = () => {
   return (
-    <>
-      <div>Home</div>
-    </>
+    <Grid item height="100%">
+      <Typography fontFamily={"Switzer-Regular"} fontSize={"40px"}>
+        asd
+      </Typography>
+    </Grid>
   );
 };

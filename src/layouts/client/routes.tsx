@@ -8,15 +8,15 @@ import { SearchProduct } from "modules/search-product";
 import { Header } from "./components/Header";
 import { Color } from "modules/color";
 
+/**
+ * In full pages, just add height 100% on the grid item
+ */
+
 export const ClientRoutes = () => {
   return (
     <>
       <Header />
-      <Grid
-        container
-        direction="column"
-        sx={{ width: "100%", p: 0, m: 0, mt: "33px" }}
-      >
+      <Grid container direction="column" width={"100%"} mt="33px">
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="home" element={<Home />} />
